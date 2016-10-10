@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com.cjz.dao"
+	xmlns:cjz="http://com.cjz.dao" elementFormDefault="qualified">
+
+	<complexType name="insert" mixed="true">
+		<attribute name="name" type="ID" use="required"></attribute>
+	</complexType>
+	<complexType name="delete" mixed="true">
+		<attribute name="name" type="ID" use="required"></attribute>
+	</complexType>
+	<complexType name="update" mixed="true">
+		<attribute name="name" type="ID" use="required"></attribute>
+	</complexType>
+	<complexType name="select" mixed="true">
+		<attribute name="name" type="ID" use="required"></attribute>
+	</complexType>
+
+	<!-- <complexType name="HQL">
+		<choice maxOccurs="unbounded" minOccurs="0">
+			<element name="insert" type="cjz:insert"></element>
+			<element name="delete" type="cjz:delete"></element>
+			<element name="update" type="cjz:update"></element>
+			<element name="select" type="cjz:select"></element>
+		</choice>
+	</complexType>
+
+	<complexType name="SQL">
+		<choice maxOccurs="unbounded" minOccurs="0">
+			<element name="insert" type="cjz:insert"></element>
+			<element name="delete" type="cjz:delete"></element>
+			<element name="update" type="cjz:update"></element>
+			<element name="select" type="cjz:select"></element>
+		</choice>
+	</complexType> -->
+
+	<complexType name="DML">
+		<choice maxOccurs="unbounded" minOccurs="0">
+			<element name="insert" type="cjz:insert"></element>
+			<element name="delete" type="cjz:delete"></element>
+			<element name="update" type="cjz:update"></element>
+			<element name="select" type="cjz:select"></element>
+		</choice>
+	</complexType>
+
+	<element name="DML" type="cjz:DML"></element>
+</schema>

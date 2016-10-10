@@ -1,0 +1,9 @@
+Ext
+		.define(
+				'WebApp.view.carousel.Panel',
+				{
+					extend : 'Ext.panel.Panel',
+					alias : 'widget.carousel',
+					controller : 'carousel',
+					html : '<div class="carousel slide" id="carousel-225164"><ol class="carousel-indicators"><li class="active" data-slide-to="0" data-target="#carousel-225164"></li><li data-slide-to="1" data-target="#carousel-225164"></li><li data-slide-to="2" data-target="#carousel-225164"></li></ol><div class="carousel-inner"><div class="item active"><img alt="" src="./build/development/WebApp/classic/resources/images/window/1.png" /><div class="carousel-caption"><h4>First Thumbnail label</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></div><div class="item"><img alt="" src="./build/development/WebApp/classic/resources/images/window/2.png" /><div class="carousel-caption"><h4>Second Thumbnail label</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></div><div class="item"><img alt="" src="./build/development/WebApp/classic/resources/images/window/3.png" /><div class="carousel-caption"><h4>Third Thumbnail label</h4><p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p></div></div></div> <a class="left carousel-control" href="#carousel-225164" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-225164" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a></div>'
+				});

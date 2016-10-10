@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DML xmlns="http://com.cjz.dao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.cjz.dao ../dao.xsd">
+	<select name="user_login">
+		    <![CDATA[ 
+        		from User where 1 = 1
+        		 and del = 0
+        		 and enabled = 1
+        		 and (userName = '${userName}'
+        		  or telphone = '${telphone}'
+        		  or email = '${email}')
+        	]]>
+	</select>
+	<select name="user_find">
+		    <![CDATA[ 
+        		from User where 1 = 1
+        		<#if filter??>
+        			<#list filter as f>
+        				${f.logic} ${f.field} ${f.relation} ${f.value}
+        			</#list>
+        		</#if>
+        	]]>
+	</select>
+	<select name="sql_in_user">
+		    <![CDATA[ 
+				select *
+  				  from tm_user u
+ 				 where exists
+ 				 (select *
+          			from t_user_role ur
+         		   where u.id = ur.tm_user_id
+           		     and ur.ts_role_id = '${ts_role_id}')
+			  ]]>
+	</select>
+	<select name="sql_un_user">
+		    <![CDATA[ 
+				select *
+  				  from tm_user u
+ 				 where not exists
+ 				 (select *
+          			from t_user_role ur
+         		   where u.id = ur.tm_user_id
+           		     and ur.ts_role_id = '${ts_role_id}')
+			  ]]>
+	</select>
+</DML>

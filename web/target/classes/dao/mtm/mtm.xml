@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DML xmlns="http://com.cjz.dao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.cjz.dao ../dao.xsd">
+
+	<delete name="del_t_user_role">
+		delete t_user_role
+		where tm_user_id =
+		'${tm_id}'
+		and ts_role_id = '${ts_id}'
+	</delete>
+
+	<insert name="add_t_user_role">
+		insert into t_user_role
+		(tm_user_id, ts_role_id)
+		values
+		('${tm_id}', '${ts_id}')
+	</insert>
+
+	<delete name="del_t_user_fun">
+		delete t_user_fun
+		where tm_user_id =
+		'${tm_id}'
+		and ts_fun_id = '${ts_id}'
+	</delete>
+
+	<insert name="add_t_user_fun">
+		insert into t_user_fun
+		(tm_user_id, ts_fun_id)
+		values
+		('${tm_id}', '${ts_id}')
+	</insert>
+</DML>

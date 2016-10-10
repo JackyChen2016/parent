@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DML xmlns="http://com.cjz.dao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.cjz.dao ../dao.xsd">
+	<select name="function_find">
+		    <![CDATA[ 
+        		from Function where 1 = 1
+        		<#if filter??>
+        			<#list filter as f>
+        				${f.logic} ${f.field} ${f.relation} ${f.value}
+        			</#list>
+        		</#if>
+        	]]>
+	</select>
+	
+	<select name="sql_in_fun">
+		    <![CDATA[ 
+        		select *
+  				from ts_fun f
+ 				where exists (select *
+          		from t_user_fun uf
+         		where f.id = uf.ts_fun_id
+           		and uf.tm_user_id = '${tm_id}')
+   				and f.ts_module_id = '${ts_id}'
+        	]]>
+	</select>
+	
+	<select name="sql_un_fun">
+		    <![CDATA[ 
+        		select *
+  				from ts_fun f
+ 				where not exists (select *
+          		from t_user_fun uf
+         		where f.id = uf.ts_fun_id
+           		and uf.tm_user_id = '${tm_id}')
+   				and f.ts_module_id = '${ts_id}'
+        	]]>
+	</select>
+</DML>

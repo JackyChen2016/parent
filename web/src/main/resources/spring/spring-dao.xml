@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="version" class="freemarker.template.Version">
+		<constructor-arg type="int" index="0">
+			<value>2</value>
+		</constructor-arg>
+		<constructor-arg type="int" index="1">
+			<value>3</value>
+		</constructor-arg>
+		<constructor-arg type="int" index="2">
+			<value>22</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="config" class="freemarker.template.Configuration">
+		<constructor-arg ref="version" />
+	</bean>
+
+	<bean id="templateLoader" class="priv.jc.app.core.dao.impl.XmlTemplateLoader">
+		<constructor-arg>
+			<value>classpath:/dao/*/*.xml</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="daoFactory" class="priv.jc.app.core.dao.impl.DaoFactoryImpl">
+		<property name="userDao" ref="userDao"></property>
+		<property name="moduleDao" ref="moduleDao"></property>
+		<property name="serialNumberDao" ref="serialNumberDao"></property>
+	</bean>
+
+	<bean id="userDao" class="priv.jc.app.core.dao.system.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="config" ref="config"></property>
+		<property name="templateLoader" ref="templateLoader"></property>
+	</bean>
+
+	<bean id="moduleDao" class="priv.jc.app.core.dao.system.impl.ModuleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="config" ref="config"></property>
+		<property name="templateLoader" ref="templateLoader"></property>
+	</bean>
+
+	<bean id="serialNumberDao" class="priv.jc.app.core.dao.system.impl.SerialNumberDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="config" ref="config"></property>
+		<property name="templateLoader" ref="templateLoader"></property>
+	</bean>
+
+	<bean id="functionDao" class="priv.jc.app.core.dao.system.impl.FunctionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="config" ref="config"></property>
+		<property name="templateLoader" ref="templateLoader"></property>
+	</bean>
+	
+	<bean id="roleDao" class="priv.jc.app.core.dao.system.impl.RoleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="config" ref="config"></property>
+		<property name="templateLoader" ref="templateLoader"></property>
+	</bean>
+	
+	<bean id="sessionLogDao" class="priv.jc.app.core.dao.system.impl.SessionLogDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="config" ref="config"></property>
+		<property name="templateLoader" ref="templateLoader"></property>
+	</bean>
+	
+	<bean id="m2mDao" class="priv.jc.app.core.dao.impl.M2MDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="config" ref="config"></property>
+		<property name="templateLoader" ref="templateLoader"></property>
+	</bean>
+</beans>

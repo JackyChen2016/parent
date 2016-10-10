@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        ">
+	<!-- 定义是否登录的权限拦截器 -->
+	<bean id="loginInterceptor" class="priv.jc.app.core.interceptor.LoginInterceptor">
+	</bean>
+
+	<!-- 定义会话日志拦截器 -->
+	<bean id="sessionLogInterceptor" class="priv.jc.app.core.interceptor.SessionLogInterceptor">
+	    <property name="service" ref="sessionLogService"></property>
+	</bean>
+
+	<!-- URL映射配置 -->
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="sessionLogInterceptor" />
+			</list>
+		</property>
+		<property name="mappings">
+			<bean
+				class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+				<property name="location">
+					<value>classpath:url/url.properties</value>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="lc_handlerMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="sessionLogInterceptor" />
+				<ref bean="loginInterceptor" />
+			</list>
+		</property>
+		<property name="mappings">
+			<bean
+				class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+				<property name="location">
+					<value>classpath:url/lc_url.properties</value>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- 视图解析配置 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".html" />
+	</bean>
+
+	<!-- 解决中文乱码 -->
+	<!-- 手动配置Springmvc注解驱动 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+
+	<!-- 启动Spring MVC的注解功能,设置编码方式，防止乱码 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+</beans>

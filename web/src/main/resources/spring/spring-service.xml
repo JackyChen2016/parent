@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="md5" class="priv.jc.util.data.encrypt.impl.MD5"></bean>
+	<bean id="sha" class="priv.jc.util.data.encrypt.impl.SHA"></bean>
+
+	<bean id="userService" class="pers.jc.app.service.system.UserService">
+		<property name="md5" ref="md5"></property>
+		<property name="dao" ref="userDao"></property>
+		<property name="daoFactory" ref="daoFactory"></property>
+	</bean>
+
+	<bean id="moduleService" class="pers.jc.app.service.system.ModuleService">
+		<property name="dao" ref="moduleDao"></property>
+		<property name="daoFactory" ref="daoFactory"></property>
+	</bean>
+
+	<bean id="functionService" class="pers.jc.app.service.system.FunctionService">
+		<property name="dao" ref="functionDao"></property>
+		<property name="daoFactory" ref="daoFactory"></property>
+	</bean>
+
+	<bean id="serialNumberService" class="pers.jc.app.service.system.SerialNumberService">
+		<property name="dao" ref="serialNumberDao"></property>
+		<property name="daoFactory" ref="daoFactory"></property>
+	</bean>
+
+	<bean id="roleService" class="pers.jc.app.service.system.RoleService">
+		<property name="dao" ref="roleDao"></property>
+		<property name="daoFactory" ref="daoFactory"></property>
+	</bean>
+	
+	<bean id="sessionLogService" class="pers.jc.app.service.system.SessionLogService">
+		<property name="dao" ref="sessionLogDao"></property>
+		<property name="daoFactory" ref="daoFactory"></property>
+	</bean>
+
+	<bean id="m2mService" class="pers.jc.app.service.m2m.M2MService">
+		<property name="dao" ref="m2mDao"></property>
+		<property name="daoFactory" ref="daoFactory"></property>
+	</bean>
+</beans>

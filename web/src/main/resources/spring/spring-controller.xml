@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="mainController" class="priv.jc.app.core.action.impl.MainController">
+	</bean>
+
+	<bean id="userController" class="pers.jc.app.action.system.UserController">
+		<property name="service" ref="userService"></property>
+	</bean>
+
+	<bean id="moduleController" class="pers.jc.app.action.system.ModuleController">
+		<property name="service" ref="moduleService"></property>
+	</bean>
+
+	<bean id="functionController" class="pers.jc.app.action.system.FunctionController">
+		<property name="service" ref="functionService"></property>
+	</bean>
+
+	<bean id="serialNumberController" class="pers.jc.app.action.system.SerialNumberController">
+		<property name="service" ref="serialNumberService"></property>
+	</bean>
+	
+	<bean id="sessionLogController" class="pers.jc.app.action.system.SessionLogController">
+		<property name="service" ref="sessionLogService"></property>
+	</bean>
+
+	<bean id="roleController" class="pers.jc.app.action.system.RoleController">
+		<property name="service" ref="roleService"></property>
+	</bean>
+
+	<bean id="m2mController" class="pers.jc.app.action.m2m.M2MController">
+		<property name="service" ref="m2mService"></property>
+	</bean>
+
+	<bean id="lodopController" class="pers.jc.app.action.print.LodopController">
+		<property name="lodopPath" value="classpath:/CLodopPrint_Setup_for_Win32NT.zip"></property>
+	</bean>
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DML xmlns="http://com.cjz.dao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.cjz.dao ../dao.xsd">
+	<select name="sessionLog_find">
+		    <![CDATA[ 
+				from SessionLog where 1 = 1 
+			  	<#if filter??>
+        			<#list filter as f>
+        				${f.logic} ${f.field} ${f.relation} ${f.value}
+        			</#list>
+        		</#if>
+			  ]]>
+	</select>
+</DML>

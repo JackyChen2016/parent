@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DML xmlns="http://com.cjz.dao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.cjz.dao ../dao.xsd">
+	<select name="role_find">
+		    <![CDATA[ 
+				from Role where 1 = 1 
+			  	<#if filter??>
+        			<#list filter as f>
+        				${f.logic} ${f.field} ${f.relation} ${f.value}
+        			</#list>
+        		</#if>
+			  ]]>
+	</select>
+	<select name="sql_in_role">
+		    <![CDATA[ 
+				select *
+  				  from ts_role r
+ 				 where exists
+ 				 (select *
+          			from t_user_role ur
+         		   where r.id = ur.ts_role_id
+           		     and ur.tm_user_id = '${tm_user_id}')
+			  ]]>
+	</select>
+	<select name="sql_un_role">
+		    <![CDATA[ 
+				select *
+  				  from ts_role r
+ 				 where not exists
+ 				 (select *
+          			from t_user_role ur
+         		   where r.id = ur.ts_role_id
+           		     and ur.tm_user_id = '${tm_user_id}')
+			  ]]>
+	</select>
+</DML>
