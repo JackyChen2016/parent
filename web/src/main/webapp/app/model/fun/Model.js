@@ -1,4 +1,4 @@
-Ext.define('WebApp.model.fun.Fun', {
+Ext.define('WebApp.model.fun.Model', {
 	extend : 'WebApp.model.core.Model',
 	alias : 'viewmodel.fun',
 	fields : [ {

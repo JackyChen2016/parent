@@ -1,6 +1,6 @@
-Ext.define('WebApp.view.fun.Fun', {
+Ext.define('WebApp.view.fun.Panel', {
 	extend : 'Ext.grid.Panel',
-	requires : [ 'WebApp.view.fun.FunController', 'WebApp.store.fun.Fun' ],
+	requires : [ 'WebApp.view.fun.Controller', 'WebApp.store.fun.Store' ],
 	alias : 'widget.fun',
 	store : {
 		type : 'fun'

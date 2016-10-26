@@ -1,8 +1,8 @@
-Ext.define('WebApp.store.fun.Fun', {
+Ext.define('WebApp.store.fun.Store', {
 	extend : 'Ext.data.Store',
-	requires : [ 'WebApp.model.fun.Fun' ],
+	requires : [ 'WebApp.model.fun.Model' ],
 	alias : 'store.fun',
-	model : 'WebApp.model.fun.Fun',
+	model : 'WebApp.model.fun.Model',
 	proxy : {
 		type : 'ajax',
 		reader : {

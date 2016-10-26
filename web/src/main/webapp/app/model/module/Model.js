@@ -1,4 +1,4 @@
-Ext.define('WebApp.model.module.Module', {
+Ext.define('WebApp.model.module.Model', {
 	extend : 'WebApp.model.core.Model',
 	alias : 'viewmodel.module',
 	fields : [ {

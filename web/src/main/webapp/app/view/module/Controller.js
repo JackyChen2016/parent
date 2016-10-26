@@ -1,20 +1,17 @@
-Ext.define('WebApp.view.fun.FunController', {
+Ext.define('WebApp.view.module.Controller', {
 	extend : 'WebApp.view.core.Controller',
-	requires : [ 'WebApp.model.fun.Fun' ],
-	alias : 'controller.fun',
-	className : 'WebApp.view.fun.FunController',
+	alias : 'controller.module',
+	className : 'WebApp.view.module.Controller',
 	onAdd : function(sender) {
-		var me = this;
-		var view = me.getView().previousSibling();
-		var record = view.controller.getSelect();
-		if (this.isEdit(sender) && record.data.leaf) {
-			this.getView().getStore().insert(0, new WebApp.model.fun.Fun({
-				add : true,
-				enabled : true,
-				module : record.data,
-				createUser : this.getSession().user.userName,
-				createTime : Ext.util.Format.date(new Date(), 'Y/m/d H:i:s')
-			}));
+		if (this.isEdit(sender)) {
+			this.getView().getSelectionModel().getLastSelected().appendChild(
+					new WebApp.model.module.Module({
+						add : true,
+						enabled : true,
+						createUser : this.getSession().user.userName,
+						createTime : Ext.util.Format.date(new Date(),
+								'Y/m/d H:i:s')
+					}));
 		}
 	},
 	onDel : function(sender) {
@@ -24,7 +21,8 @@ Ext.define('WebApp.view.fun.FunController', {
 			if (!Ext.isEmpty(rec)) {
 				rec.forEach(function(r) {
 					if (r.data.add) {
-						me.getView().getStore().remove(r);
+						me.removeChildren(r);
+						r.parentNode.removeChild(r);
 					}
 				});
 			}
@@ -42,12 +40,12 @@ Ext.define('WebApp.view.fun.FunController', {
 		var records = me.getView().getStore().getModifiedRecords();
 		if (records.length) {
 			Ext.Ajax.request({
-				url : 'save_fun',
+				url : sender.route,
 				jsonData : me.getModifiedData(records),
 				success : function(response, opts) {
 					var obj = Ext.decode(response.responseText);
 					if (obj.success) {
-						me.activate();
+						me.onQuery(me.getFunbtn(sender, 'onQuery'));
 					} else {
 						Ext.Msg.show({
 							title : "错误提示",
@@ -61,11 +59,11 @@ Ext.define('WebApp.view.fun.FunController', {
 			});
 		}
 	},
-	query : function(jsonData) {
-		var grid = this.getView();
+	onQuery : function(sender) {
+		var me = this;
 		Ext.Ajax.request({
-			url : 'find_fun',
-			jsonData : jsonData,
+			url : sender.route,
+			jsonData : [],
 			success : function(response, opts) {
 				obj = Ext.decode(response.responseText);
 				title = "提示";
@@ -81,28 +79,34 @@ Ext.define('WebApp.view.fun.FunController', {
 						icon : icon
 					});
 				} else {
-					grid.getStore().setData(obj.data);
+					var grid = me.getView();
+					me.removeChildren(grid.getStore().getRoot());
+					grid.getStore().getRoot().appendChild(obj.data);
+					grid.getStore().commitChanges();
 					grid.getStore().sort('sort', 'ASC');
-					grid.getSelectionModel().select(0, true);
+					grid.expandAll();
 				}
 			}
 		});
 	},
-	activate : function(t, eOpts) {
+	removeChildren : function(node) {
 		var me = this;
-		me.getView().getStore().setData({});
-		var view = me.getView().previousSibling();
-		var record = view.controller.getSelect();
-		if (record.data.leaf) {
-			var jsonData = [];
-			var filter = {};
-			filter.logic = 'and';
-			filter.field = 'ts_module_id';
-			filter.type = 'string';
-			filter.relation = '=';
-			filter.value = record.data.id;
-			jsonData.push(filter);
-			me.query(jsonData);
+		if (!node)
+			return;
+		while (node.hasChildNodes()) {
+			me.removeChildren(node.firstChild);
+			node.removeChild(node.firstChild);
 		}
+	},
+	rowdblclick : function(t, record, tr, rowIndex, e, eOpts) {
+		var me = this;
+		if (record.data.leaf && !record.data.add) {
+			var view = me.getView();
+			var tab = view.ownerCt;
+			tab.setActiveItem(1);
+		}
+	},
+	getSelect : function() {
+		return this.getView().getSelectionModel().getLastSelected();
 	}
 });

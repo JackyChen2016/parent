@@ -6,6 +6,26 @@ Ext.define('WebApp.view.toolbar.BottonToolbar', {
 	controller : 'bottontoolbar',
 	border : true,
 	items : [ '->', {
+		text : '天空蓝',
+		listeners : {
+			click : 'onHelp'
+		}
+	}, {
+		text : '清新绿',
+		listeners : {
+			click : 'onHelp'
+		}
+	}, {
+		text : '幻夜黑',
+		listeners : {
+			click : 'onHelp'
+		}
+	}, {
+		text : '枫叶红',
+		listeners : {
+			click : 'onHelp'
+		}
+	}, '-', {
 		text : '帮助',
 		listeners : {
 			click : 'onHelp'
@@ -20,6 +40,8 @@ Ext.define('WebApp.view.toolbar.BottonToolbar', {
 		listeners : {
 			click : 'onLogout'
 		}
+	}, '-', {
+		xtype : 'battery'
 	}, '-', {
 		xtype : 'clock'
 	} ]

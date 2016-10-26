@@ -1,8 +1,8 @@
-Ext.define('WebApp.store.module.Module', {
+Ext.define('WebApp.store.module.TreeStore', {
 	extend : 'Ext.data.TreeStore',
-	requires : [ 'WebApp.model.module.Module' ],
+	requires : [ 'WebApp.model.module.Model' ],
 	alias : 'store.module',
-	model : 'WebApp.model.module.Module',
+	model : 'WebApp.model.module.Model',
 	proxy : {
 		type : 'ajax',
 		/*

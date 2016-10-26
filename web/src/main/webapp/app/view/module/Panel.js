@@ -1,7 +1,7 @@
-Ext.define('WebApp.view.module.Module', {
+Ext.define('WebApp.view.module.Panel', {
 	extend : 'Ext.tree.Panel',
-	requires : [ 'WebApp.store.module.Module',
-			'WebApp.view.module.ModuleController' ],
+	requires : [ 'WebApp.store.module.TreeStore',
+			'WebApp.view.module.Controller' ],
 	alias : 'widget.module',
 	controller : 'module',
 	store : {

@@ -1,6 +1,6 @@
 Ext.define('WebApp.view.authority.Module', {
 	extend : 'Ext.tree.Panel',
-	requires : [ 'WebApp.store.module.Module',
+	requires : [ 'WebApp.store.module.TreeStore',
 			'WebApp.view.authority.ModuleController' ],
 	alias : 'widget.amodule',
 	controller : 'amodule',

@@ -1,17 +1,20 @@
-Ext.define('WebApp.view.module.ModuleController', {
+Ext.define('WebApp.view.fun.Controller', {
 	extend : 'WebApp.view.core.Controller',
-	alias : 'controller.module',
-	className : 'WebApp.view.module.ModuleController',
+	requires : [ 'WebApp.model.fun.Model' ],
+	alias : 'controller.fun',
+	className : 'WebApp.view.fun.Controller',
 	onAdd : function(sender) {
-		if (this.isEdit(sender)) {
-			this.getView().getSelectionModel().getLastSelected().appendChild(
-					new WebApp.model.module.Module({
-						add : true,
-						enabled : true,
-						createUser : this.getSession().user.userName,
-						createTime : Ext.util.Format.date(new Date(),
-								'Y/m/d H:i:s')
-					}));
+		var me = this;
+		var view = me.getView().previousSibling();
+		var record = view.controller.getSelect();
+		if (this.isEdit(sender) && record.data.leaf) {
+			this.getView().getStore().insert(0, new WebApp.model.fun.Fun({
+				add : true,
+				enabled : true,
+				module : record.data,
+				createUser : this.getSession().user.userName,
+				createTime : Ext.util.Format.date(new Date(), 'Y/m/d H:i:s')
+			}));
 		}
 	},
 	onDel : function(sender) {
@@ -21,8 +24,7 @@ Ext.define('WebApp.view.module.ModuleController', {
 			if (!Ext.isEmpty(rec)) {
 				rec.forEach(function(r) {
 					if (r.data.add) {
-						me.removeChildren(r);
-						r.parentNode.removeChild(r);
+						me.getView().getStore().remove(r);
 					}
 				});
 			}
@@ -40,12 +42,12 @@ Ext.define('WebApp.view.module.ModuleController', {
 		var records = me.getView().getStore().getModifiedRecords();
 		if (records.length) {
 			Ext.Ajax.request({
-				url : sender.route,
+				url : 'save_fun',
 				jsonData : me.getModifiedData(records),
 				success : function(response, opts) {
 					var obj = Ext.decode(response.responseText);
 					if (obj.success) {
-						me.onQuery(me.getFunbtn(sender, 'onQuery'));
+						me.activate();
 					} else {
 						Ext.Msg.show({
 							title : "错误提示",
@@ -59,11 +61,11 @@ Ext.define('WebApp.view.module.ModuleController', {
 			});
 		}
 	},
-	onQuery : function(sender) {
-		var me = this;
+	query : function(jsonData) {
+		var grid = this.getView();
 		Ext.Ajax.request({
-			url : sender.route,
-			jsonData : [],
+			url : 'find_fun',
+			jsonData : jsonData,
 			success : function(response, opts) {
 				obj = Ext.decode(response.responseText);
 				title = "提示";
@@ -79,34 +81,28 @@ Ext.define('WebApp.view.module.ModuleController', {
 						icon : icon
 					});
 				} else {
-					var grid = me.getView();
-					me.removeChildren(grid.getStore().getRoot());
-					grid.getStore().getRoot().appendChild(obj.data);
-					grid.getStore().commitChanges();
+					grid.getStore().setData(obj.data);
 					grid.getStore().sort('sort', 'ASC');
-					grid.expandAll();
+					grid.getSelectionModel().select(0, true);
 				}
 			}
 		});
 	},
-	removeChildren : function(node) {
+	activate : function(t, eOpts) {
 		var me = this;
-		if (!node)
-			return;
-		while (node.hasChildNodes()) {
-			me.removeChildren(node.firstChild);
-			node.removeChild(node.firstChild);
+		me.getView().getStore().setData({});
+		var view = me.getView().previousSibling();
+		var record = view.controller.getSelect();
+		if (record.data.leaf) {
+			var jsonData = [];
+			var filter = {};
+			filter.logic = 'and';
+			filter.field = 'ts_module_id';
+			filter.type = 'string';
+			filter.relation = '=';
+			filter.value = record.data.id;
+			jsonData.push(filter);
+			me.query(jsonData);
 		}
-	},
-	rowdblclick : function(t, record, tr, rowIndex, e, eOpts) {
-		var me = this;
-		if (record.data.leaf && !record.data.add) {
-			var view = me.getView();
-			var tab = view.ownerCt;
-			tab.setActiveItem(1);
-		}
-	},
-	getSelect : function() {
-		return this.getView().getSelectionModel().getLastSelected();
 	}
 });
