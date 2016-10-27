@@ -2915,14 +2915,6 @@
     min-width: 100%;
     min-height: 100%;
 }
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/src/Component.scss:2 */
-@font-face {
-    font-family: 'ext-watermark';
-    src: url('ext-watermark/fonts/ext-watermark.eot?n6lnws');
-    src: url('ext-watermark/fonts/ext-watermark.eot?#iefixn6lnws') format('embedded-opentype'), url('ext-watermark/fonts/ext-watermark.woff?n6lnws') format('woff'), url('ext-watermark/fonts/ext-watermark.ttf?n6lnws') format('truetype'), url('ext-watermark/fonts/ext-watermark.svg?n6lnws#ext-watermark') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 /* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/src/Component.scss:14 */
 .x-body {
     margin: 0;
@@ -9943,21 +9935,6 @@ body > .x-mask {
     text-transform: none;
     padding: 0;
 }
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:398 */
-.x-panel-header-title-default > .x-title-text-default:after {
-    font-family: ext-watermark;
-    font-size: 32.25px;
-    content: 'd';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #99c1e5;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:411 */
-.x-panel-header-title-default > .x-title-text-default.x-rtl:after {
-    right: auto;
-    left: 0;
-}
 /* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:440 */
 .x-panel-header-title-default > .x-title-icon-wrap-default.x-title-icon-top {
     height: 24px;
@@ -10314,21 +10291,6 @@ body > .x-mask {
 .x-panel-header-title-default-framed > .x-title-text-default-framed {
     text-transform: none;
     padding: 0;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:398 */
-.x-panel-header-title-default-framed > .x-title-text-default-framed:after {
-    font-family: ext-watermark;
-    font-size: 30px;
-    content: 'd';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #99c1e5;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:411 */
-.x-panel-header-title-default-framed > .x-title-text-default-framed.x-rtl:after {
-    right: auto;
-    left: 0;
 }
 /* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:440 */
 .x-panel-header-title-default-framed > .x-title-icon-wrap-default-framed.x-title-icon-top {
@@ -12200,21 +12162,6 @@ body > .x-mask {
 .x-window-header-title-default > .x-title-text-default {
     padding: 0;
     text-transform: none;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/window/Window.scss:319 */
-.x-window-header-title-default > .x-title-text-default:after {
-    font-family: ext-watermark;
-    font-size: 30px;
-    content: 'd';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #99c1e5;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/window/Window.scss:332 */
-.x-window-header-title-default > .x-title-text-default.x-rtl:after {
-    right: auto;
-    left: 0;
 }
 /* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/window/Window.scss:361 */
 .x-window-header-title-default > .x-title-icon-wrap-default.x-title-icon-top {
@@ -15938,4 +15885,39 @@ a.x-color-picker-item:hover {
     border-style: solid;
     border-width: 0;
     position: absolute;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1159 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-grid-cell-small:after {
+    top: 1px;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1165 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-grid-cell-small.x-segmented-button-first:after {
+    left: 1px;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1168 */
+.x-nbr .x-segmented-button-item-horizontal.x-btn-grid-cell-small.x-segmented-button-last:after {
+    right: 1px;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1174 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-grid-cell-small:after {
+    top: 0;
+    right: 1px;
+    bottom: 0;
+    left: 1px;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1180 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-grid-cell-small.x-segmented-button-first:after {
+    top: 1px;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1183 */
+.x-nbr .x-segmented-button-item-vertical.x-btn-grid-cell-small.x-segmented-button-last:after {
+    bottom: 1px;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-grid-cell-small:before {
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-grid-cell-small-focus-corners.gif), sides:url(images/btn/btn-grid-cell-small-focus-sides.gif)" !important;
 }

@@ -1,38 +1,3 @@
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1159 */
-.x-nbr .x-segmented-button-item-horizontal.x-btn-grid-cell-small:after {
-    top: 1px;
-    right: 0;
-    bottom: 1px;
-    left: 0;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1165 */
-.x-nbr .x-segmented-button-item-horizontal.x-btn-grid-cell-small.x-segmented-button-first:after {
-    left: 1px;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1168 */
-.x-nbr .x-segmented-button-item-horizontal.x-btn-grid-cell-small.x-segmented-button-last:after {
-    right: 1px;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1174 */
-.x-nbr .x-segmented-button-item-vertical.x-btn-grid-cell-small:after {
-    top: 0;
-    right: 1px;
-    bottom: 0;
-    left: 1px;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1180 */
-.x-nbr .x-segmented-button-item-vertical.x-btn-grid-cell-small.x-segmented-button-first:after {
-    top: 1px;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/button/Button.scss:1183 */
-.x-nbr .x-segmented-button-item-vertical.x-btn-grid-cell-small.x-segmented-button-last:after {
-    bottom: 1px;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-btn-focus.x-btn-grid-cell-small:before {
-    display: none;
-    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-grid-cell-small-focus-corners.gif), sides:url(images/btn/btn-grid-cell-small-focus-sides.gif)" !important;
-}
 /* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
 .x-cmd-slicer.x-btn-over.x-btn-grid-cell-small:before {
     display: none;
@@ -5233,21 +5198,6 @@ div.x-border-layout-ct {
     text-transform: none;
     padding: 0;
 }
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:398 */
-.x-panel-header-title-light > .x-title-text-light:after {
-    font-family: ext-watermark;
-    font-size: 32.25px;
-    content: 'd';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #bfbfbf;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:411 */
-.x-panel-header-title-light > .x-title-text-light.x-rtl:after {
-    right: auto;
-    left: 0;
-}
 /* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:440 */
 .x-panel-header-title-light > .x-title-icon-wrap-light.x-title-icon-top {
     height: 24px;
@@ -5605,21 +5555,6 @@ div.x-border-layout-ct {
 .x-panel-header-title-light-framed > .x-title-text-light-framed {
     text-transform: none;
     padding: 0;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:398 */
-.x-panel-header-title-light-framed > .x-title-text-light-framed:after {
-    font-family: ext-watermark;
-    font-size: 30px;
-    content: 'd';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #bfbfbf;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:411 */
-.x-panel-header-title-light-framed > .x-title-text-light-framed.x-rtl:after {
-    right: auto;
-    left: 0;
 }
 /* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:440 */
 .x-panel-header-title-light-framed > .x-title-icon-wrap-light-framed.x-title-icon-top {
@@ -8895,21 +8830,6 @@ div.x-border-layout-ct {
 .x-panel-header-title-navigation > .x-title-text-navigation {
     text-transform: none;
     padding: 0;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:398 */
-.x-panel-header-title-navigation > .x-title-text-navigation:after {
-    font-family: ext-watermark;
-    font-size: 18px;
-    content: 'd';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #9fc7eb;
-}
-/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:411 */
-.x-panel-header-title-navigation > .x-title-text-navigation.x-rtl:after {
-    right: auto;
-    left: 0;
 }
 /* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-neutral/sass/src/panel/Panel.scss:440 */
 .x-panel-header-title-navigation > .x-title-icon-wrap-navigation.x-title-icon-top {
