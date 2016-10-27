@@ -2359,83 +2359,83 @@
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:1 */
 .bug-button {
-    background: url(images/button/bug.png);
+    background: url(images/fun/bug.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:5 */
 .add-button {
-    background: url(images/button/add.png);
+    background: url(images/fun/add.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:9 */
 .delete-button {
-    background: url(images/button/delete.png);
+    background: url(images/fun/delete.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:13 */
 .edit-button {
-    background: url(images/button/edit.png);
+    background: url(images/fun/edit.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:17 */
 .save-button {
-    background: url(images/button/save.png);
+    background: url(images/fun/save.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:21 */
 .query-button {
-    background: url(images/button/query.png);
+    background: url(images/fun/query.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:25 */
 .refresh-button {
-    background: url(images/button/refresh.png);
+    background: url(images/fun/refresh.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:29 */
 .trash-button {
-    background: url(images/button/trash.png);
+    background: url(images/fun/trash.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:33 */
 .exp-button {
-    background: url(images/button/exp.png);
+    background: url(images/fun/exp.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:37 */
 .imp-button {
-    background: url(images/button/imp.png);
+    background: url(images/fun/imp.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:41 */
 .print-button {
-    background: url(images/button/print.png);
+    background: url(images/fun/print.png);
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:45 */
 .root-menu {
-    background-image: url(images/menu/root.png) !important;
+    background-image: url(images/module/root.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:49 */
 .module-menu {
-    background-image: url(images/menu/module.png) !important;
+    background-image: url(images/module/module.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:53 */
 .set-menu {
-    background-image: url(images/menu/set.png) !important;
+    background-image: url(images/module/set.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:57 */
 .role-menu {
-    background-image: url(images/menu/role.png) !important;
+    background-image: url(images/module/role.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:61 */
 .user-menu {
-    background-image: url(images/menu/user.png) !important;
+    background-image: url(images/module/user.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:65 */
 .authority-menu {
-    background-image: url(images/menu/authority.png) !important;
+    background-image: url(images/module/authority.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:69 */
 .log-menu {
-    background-image: url(images/menu/log.png) !important;
+    background-image: url(images/module/log.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:73 */
 .serialnumber-menu {
-    background-image: url(images/menu/serialnumber.png) !important;
+    background-image: url(images/module/serialnumber.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:77 */
 .master-menu {
-    background-image: url(images/menu/master.png) !important;
+    background-image: url(images/module/master.png) !important;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:81 */
 .key-text {
@@ -2452,44 +2452,21 @@
     padding-left: 40px;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:95 */
-.logo-login {
-    background: url(images/window/login.png) no-repeat;
+.logo {
+    background: url(images/logo/logo.png) no-repeat;
     background-size: 100% 100%;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:100 */
-.logo {
-    background: url(images/window/logo.png) no-repeat;
+.top {
+    background: url(images/logo/top.png) no-repeat;
     background-size: 100% 100%;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:105 */
 .fun {
-    background: url(images/window/fun.png) no-repeat;
+    background: url(images/fun/fun.png) no-repeat;
     background-size: 100% 100%;
 }
 /* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:110 */
-.Undo {
-    background: url(images/window/Undo.png);
-}
-/* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:114 */
-.Redo {
-    background: url(images/window/Redo.png);
-}
-/* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:118 */
-.china {
-    background: url(images/window/china.png) no-repeat;
-    background-size: 100% 100%;
-}
-/* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:123 */
-.usa {
-    background: url(images/window/usa.png) no-repeat;
-    background-size: 100% 100%;
-}
-/* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:128 */
-.italia {
-    background: url(images/window/italia.png) no-repeat;
-    background-size: 100% 100%;
-}
-/* E:/workspace/parent/web/src/main/webapp/classic/sass/var/Application.scss:133 */
 .win-excel {
     background: url(images/window/excel.png) no-repeat;
     background-size: 100% 100%;
@@ -15920,4 +15897,29 @@ a.x-color-picker-item:hover {
 .x-cmd-slicer.x-btn-focus.x-btn-grid-cell-small:before {
     display: none;
     content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-grid-cell-small-focus-corners.gif), sides:url(images/btn/btn-grid-cell-small-focus-sides.gif)" !important;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-over.x-btn-grid-cell-small:before {
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-grid-cell-small-over-corners.gif), sides:url(images/btn/btn-grid-cell-small-over-sides.gif)" !important;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-over.x-btn-grid-cell-small:before {
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-grid-cell-small-focus-over-corners.gif), sides:url(images/btn/btn-grid-cell-small-focus-over-sides.gif)" !important;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-pressed.x-btn-grid-cell-small:before {
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-grid-cell-small-pressed-corners.gif), sides:url(images/btn/btn-grid-cell-small-pressed-sides.gif)" !important;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-focus.x-btn-pressed.x-btn-grid-cell-small:before {
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-grid-cell-small-focus-pressed-corners.gif), sides:url(images/btn/btn-grid-cell-small-focus-pressed-sides.gif)" !important;
+}
+/* E:/workspace/parent/web/src/main/webapp/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-btn-disabled.x-btn-grid-cell-small:before {
+    display: none;
+    content: "x-slicer:, stretch:bottom, frame:1px 1px 1px 1px, corners:url(images/btn/btn-grid-cell-small-disabled-corners.gif), sides:url(images/btn/btn-grid-cell-small-disabled-sides.gif)" !important;
 }

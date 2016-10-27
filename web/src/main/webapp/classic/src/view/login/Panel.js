@@ -12,7 +12,7 @@ Ext.define('WebApp.view.login.Panel', {
 	items : [ {
 		width : 800,
 		height : 202,
-		baseCls : 'logo-login'
+		baseCls : 'logo'
 	}, {
 		layout : {
 			type : 'hbox',

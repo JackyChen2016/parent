@@ -1,6 +1,6 @@
 Ext.define('WebApp.view.home.Viewport', {
 	extend : 'Ext.container.Viewport',
-	requires : [ 'WebApp.view.logo.Panel', 'WebApp.view.menu.TreePanel',
+	requires : [ 'WebApp.view.top.Panel', 'WebApp.view.menu.TreePanel',
 			'WebApp.view.toolbar.FunToolbar',
 			'WebApp.view.toolbar.BottonToolbar' ],
 	alias : 'widget.home',
@@ -8,7 +8,7 @@ Ext.define('WebApp.view.home.Viewport', {
 	layout : 'border',
 	items : [ {
 		region : 'north',
-		xtype : 'logo'
+		xtype : 'top'
 	}, {
 		region : 'north',
 		xtype : 'funtoolbar'
