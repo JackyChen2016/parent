@@ -11,6 +11,11 @@ Ext.define('WebApp.view.toolbar.BottonToolbarController', {
 	},
 	onModify : function(sender) {
 	},
+	onTheme : function(sender) {
+		Ext.util.CSS.swapStyleSheet('window',
+				'./build/development/WebApp/classic/resources/' + sender.theme
+						+ '.css');
+	},
 	onHelp : function(sender) {
 		alert(sender.text);
 	}

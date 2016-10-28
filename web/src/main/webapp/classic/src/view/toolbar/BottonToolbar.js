@@ -7,23 +7,27 @@ Ext.define('WebApp.view.toolbar.BottonToolbar', {
 	border : true,
 	items : [ '->', {
 		text : '天空蓝',
+		theme : 'WebApp-all',
 		listeners : {
-			click : 'onHelp'
+			click : 'onTheme'
 		}
 	}, {
 		text : '清新绿',
+		theme : 'theme-neptune',
 		listeners : {
-			click : 'onHelp'
+			click : 'onTheme'
 		}
 	}, {
 		text : '幻夜黑',
+		theme : 'theme-aria',
 		listeners : {
-			click : 'onHelp'
+			click : 'onTheme'
 		}
 	}, {
 		text : '枫叶红',
+		theme : 'theme-crisp',
 		listeners : {
-			click : 'onHelp'
+			click : 'onTheme'
 		}
 	}, '-', {
 		text : '帮助',
